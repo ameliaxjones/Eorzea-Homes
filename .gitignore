@@ -1,6 +1,5 @@
 node_modules/
 tmp/
-Gemfile.lock
 log/
 public/packs
 db/*sqlite3
