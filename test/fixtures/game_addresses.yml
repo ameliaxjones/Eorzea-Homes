@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  datacenter: 
+  location: 
+  plot: 
+  ward: 1.5
+  roomnumber: 1.5
+
+two:
+  datacenter: 
+  location: 
+  plot: 
+  ward: 1.5
+  roomnumber: 1.5

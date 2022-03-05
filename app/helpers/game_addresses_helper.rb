@@ -1,0 +1,2 @@
+module GameAddressesHelper
+end

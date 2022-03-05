@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datacenter:</strong>
+  <%= @game_address.datacenter %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @game_address.location %>
+</p>
+
+<p>
+  <strong>Plot:</strong>
+  <%= @game_address.plot %>
+</p>
+
+<p>
+  <strong>Ward:</strong>
+  <%= @game_address.ward %>
+</p>
+
+<p>
+  <strong>Roomnumber:</strong>
+  <%= @game_address.roomnumber %>
+</p>
+
+<%= link_to 'Edit', edit_game_address_path(@game_address) %> |
+<%= link_to 'Back', game_addresses_path %>

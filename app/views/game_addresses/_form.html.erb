@@ -1,0 +1,42 @@
+<%= form_with(model: game_address) do |form| %>
+  <% if game_address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game_address.errors.count, "error") %> prohibited this game_address from being saved:</h2>
+
+      <ul>
+        <% game_address.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :datacenter %>
+    <%= form.text_field :datacenter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plot %>
+    <%= form.text_field :plot %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ward %>
+    <%= form.text_field :ward %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roomnumber %>
+    <%= form.text_field :roomnumber %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
