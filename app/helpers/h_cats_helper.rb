@@ -1,0 +1,2 @@
+module HCatsHelper
+end

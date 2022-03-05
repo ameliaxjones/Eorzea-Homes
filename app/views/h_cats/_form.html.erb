@@ -1,0 +1,42 @@
+<%= form_with(model: h_cat) do |form| %>
+  <% if h_cat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(h_cat.errors.count, "error") %> prohibited this h_cat from being saved:</h2>
+
+      <ul>
+        <% h_cat.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :listing_id %>
+    <%= form.text_field :listing_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :small %>
+    <%= form.check_box :small %>
+  </div>
+
+  <div class="field">
+    <%= form.label :med %>
+    <%= form.check_box :med %>
+  </div>
+
+  <div class="field">
+    <%= form.label :large %>
+    <%= form.check_box :large %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apartment %>
+    <%= form.check_box :apartment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
