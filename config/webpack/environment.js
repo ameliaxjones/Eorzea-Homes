@@ -7,7 +7,7 @@ environment.plugins.append('Provide'),
         jQuery: 'jquery',
         Popper: ['popper.js', 'default']
     })
-    )
+    
 
 
 
