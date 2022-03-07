@@ -3,11 +3,13 @@
 one:
   title: MyString
   price: 1.5
-  open: 
-  user_id: 1
+  open: false
+  user: one
+  short_body: MyString
 
 two:
   title: MyString
   price: 1.5
-  open: 
-  user_id: 1
+  open: false
+  user: two
+  short_body: MyString

@@ -1,1 +1,29 @@
-<h1> Designer page </h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @listing.price %>
+</p>
+
+<p>
+  <strong>Open:</strong>
+  <%= @listing.open %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @listing.user_id %>
+</p>
+
+<p>
+  <strong>Short body:</strong>
+  <%= @listing.short_body %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
