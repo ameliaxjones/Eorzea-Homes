@@ -25,5 +25,12 @@
   <%= @listing.short_body %>
 </p>
 
+<p>
+    <strong> Body:</strong>
+    <%= @listing.body %>
+
+</p>
+
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
