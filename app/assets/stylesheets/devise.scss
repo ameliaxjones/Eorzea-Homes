@@ -1,20 +1,7 @@
-html,
-body {
-  height: 100%;
-}
 
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+.px-4 pt-5 my-5 text-center{
+    margin: 0px;
 }
-
-.form-signin .image_tag{
-    width: 10%;
-}
-
 
 .form-signin {
   width: 100%;
@@ -41,4 +28,9 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.text{
+    font-size: small;
+    margin-top: 10px;
 }
