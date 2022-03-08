@@ -6,6 +6,10 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end
 
+  def my_listings
+    @listings = Listing.where(user_id: current_user.id)
+  end
+
   # GET /listings/1 or /listings/1.json
   def show
   end
