@@ -1,9 +1,10 @@
 class GameAddressesController < ApplicationController
   before_action :set_game_address, only: %i[ show edit update destroy ]
+  
 
   # GET /game_addresses or /game_addresses.json
   def index
-    @game_addresses = GameAddress.all
+    @game_addresses = GameAddress.where(user_id: current_user.id)
   end
 
   # GET /game_addresses/1 or /game_addresses/1.json
