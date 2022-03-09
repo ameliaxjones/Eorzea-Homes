@@ -1,10 +1,10 @@
 <%# #nav bar added %>
 
-<header class="p-3 mb-3 border-bottom">
+<header class="p-3  border-bottom" >
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="images/logo.png"><use xlink:href="/"/></svg>
+          <%= image_tag "xs-logo.png", alt: "website logo", class: "img-fluid", width: "px"%>
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -25,8 +25,7 @@
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="/my_listings">My listing</a></li>
             <li><a class="dropdown-item" href="/listings/new">New listing</a></li>
-            <li><a class="dropdown-item" href="/users/edit">Settings</a></li>
-            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %></li>
+            <li><%= link_to 'Profile', edit_user_registration_path, :class => 'dropdown-item' %></li>
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
           </ul>
