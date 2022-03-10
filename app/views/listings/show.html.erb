@@ -31,6 +31,12 @@
 
 </p>
 
+<div>
+  <% @listing.photos.each do |photo| %>
+    <%= image_tag(photo, :width => 200) %>
+  <% end %>
+</div>
+
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

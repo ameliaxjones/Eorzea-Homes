@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
 
   # GET /listings or /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.where(open: true)
   end
 
   def my_listings
@@ -16,13 +16,13 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    
     @listing = current_user.listings.build
   end
 
   # GET /listings/1/edit
   def edit
   end
+
 
   # POST /listings or /listings.json
   def create
@@ -70,6 +70,6 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :price, :open, :user_id, :short_body, :body)
+      params.require(:listing).permit(:title, :price, :open, :user_id, :short_body, :body, :photos => [])
     end
 end

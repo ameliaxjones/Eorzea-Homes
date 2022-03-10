@@ -29,11 +29,6 @@
                     <%= form.check_box :open %>
                   </div>
 
-                  <%# <div class="field">
-                    <%= form.label :user_id %>
-                    <%# <%= form.text_field :user_id %>
-                  <%# </div> %> 
-
                   <div class="field">
                     <%= form.label :short_body, class: "small mb-1" %>
                     <%= form.text_field :short_body, class: "form-control" %>
@@ -43,6 +38,12 @@
                       <%= form.label :body, class: "small mb-1" %>
                       <%= form.rich_text_area :body %>
                     </div>
+
+                  <div class="photos">
+                    <%= form.label :photos %>
+                    <%= form.file_field :photos, :multiple => true %>
+                  </div>
+                  
                   <div class="actions" class="btn btn-sm btn-outline-secondary">
                     <%= form.submit %>
                   </div>
