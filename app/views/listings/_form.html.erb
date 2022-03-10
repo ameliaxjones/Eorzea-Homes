@@ -10,37 +10,49 @@
       </ul>
     </div>
   <% end %>
+  <div class=" d-flex justify-content-center flex-nowrap mt-5 " >
+      <div class="card mb-4 ">
+          <div class="card-header"> heading </div>
+              <div class="card-body">
+                  <div class="field">
+                    <%= form.label :title, class: "small mb-1"%>
+                    <%= form.text_field :title, class: "form-control" %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+                  <div class="field">
+                    <%= form.label :price, class: "small mb-1"%>
+                    <%= form.text_field :price, class: "form-control" %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
+                  <div class="field">
+                    <%= form.label :open, class: "small mb-1" %>
+                    <%= form.check_box :open %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :open %>
-    <%= form.check_box :open %>
-  </div>
+                  <%# <div class="field">
+                    <%= form.label :user_id %>
+                    <%# <%= form.text_field :user_id %>
+                  <%# </div> %> 
 
-  <%# <div class="field">
-    <%= form.label :user_id %>
-    <%# <%= form.text_field :user_id %>
-  <%# </div> %> 
+                  <div class="field">
+                    <%= form.label :short_body, class: "small mb-1" %>
+                    <%= form.text_field :short_body, class: "form-control" %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :short_body %>
-    <%= form.text_field :short_body %>
-  </div>
-
-  <div class="field">
-      <%= form.label :body %>
-      <%= form.rich_text_area :body %>
-    </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+                  <div class="field">
+                      <%= form.label :body, class: "small mb-1" %>
+                      <%= form.rich_text_area :body %>
+                    </div>
+                  <div class="actions" class="btn btn-sm btn-outline-secondary">
+                    <%= form.submit %>
+                  </div>
+                </div>
+            </div>
+        </div>
+   </div>
 <% end %>
+
+ 
+
+
+
