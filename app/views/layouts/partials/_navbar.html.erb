@@ -9,10 +9,11 @@
         <%# main header nav bar %>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <a class="navbar-brand" href="/">Eorzea Homes</a>
-          <li><a href="pages/how" class="nav-link px-2 link-secondary">How it works </a></li>
+          <li><a href="/pages/how" class="nav-link px-2 link-secondary">How it works </a></li>
           <li><a href="/listings"" class="nav-link px-2 link-dark">Listings</a></li>
           <% if user_signed_in? && current_user.seller == true %>
           <li><a href="/my_listings" class="nav-link px-2 link-dark">My Listings</a></li>
+          <li><a href="/orders" class="nav-link px-2 link-dark">My Orders</a></li>
           <%end%>
         </ul>
           <%# drop down nav bar %>

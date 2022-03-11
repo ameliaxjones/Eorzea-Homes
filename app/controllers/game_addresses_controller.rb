@@ -23,6 +23,7 @@ class GameAddressesController < ApplicationController
   # POST /game_addresses or /game_addresses.json
   def create
     @game_address = GameAddress.new(game_address_params)
+    @game_address.user = current_user
 
     respond_to do |format|
       if @game_address.save

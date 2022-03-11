@@ -76,7 +76,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <!-- Form ends  DO NOT PUT DELETE BUTTON INSIDE THIS FORM -->
+  <!-- Form ends  DO NOT PUT DELETE BUTTON INSIDE THIS FORM IT WILL DELETE USERS WHEN TRYING TO SAVE -->
 <% end %>
 
 <div class="col-xl-4 float-end  ">
@@ -98,6 +98,7 @@
         <div class="card mb-2 mb-xl-0">
               <div class="card-header">Add Address</div>
                 <div class="card-body text-center">
+                <%= link_to "Manage addresses", game_addresses_path, class: "btn btn-primary" %>
                     
             	</div>	 
 </div>
