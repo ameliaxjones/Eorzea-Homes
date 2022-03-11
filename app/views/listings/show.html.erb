@@ -1,43 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="whole_container bg-light ">
+  <div class="container project">
+      <div class="row">
+          <div class="col-md-5">
+              <div class="project-info-box mt-5">
+                  <h5><%= @listing.title %></h5>
+                  <p class="mb-0"><%= @listing.short_body %></p>
+              </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @listing.title %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
-
-<p>
-  <strong>Open:</strong>
-  <%= @listing.open %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @listing.user.email %>
-</p>
-
-<p>
-  <strong>Short body:</strong>
-  <%= @listing.short_body %>
-</p>
-
-<p>
-    <strong> Body:</strong>
-    <%= @listing.body %>
-
-</p>
-
-<div>
-  <% @listing.photos.each do |photo| %>
-    <%= image_tag(photo, :width => 200) %>
-  <% end %>
-</div>
-
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
+              <div class="project-info-box">
+                  <p><b>Details:</b> <%= @listing.body %></p>
+                  <p><b>Designer:</b> <%= @listing.user.email %></p>
+                  <p><strong>Price : </strong> 
+                <p><button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </p>
+                <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
+
+              </div>
+          </div>
+
+          <div class="house_img col mt-5">
+              <div>
+                <% @listing.photos.each do |photo| %>
+                  <%= image_tag(photo, :width => 600, :height => 400) %>
+                <% end %>
+              </div>
+              
+          </div>
+      </div>
+    </div>
+</div>
 
