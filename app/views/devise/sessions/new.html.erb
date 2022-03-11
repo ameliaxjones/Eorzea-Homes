@@ -2,16 +2,16 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   
- <div class="px-4 pt-5 my-5 text-center">
-    <div class="overflow-hidden" style="max-height: 25vh;">
+ <div class="px-4 pb-3 my-5 text-center">
+    <div class="overflow-hidden" style="max-height: 27vh;">
       <div class="container px-5">
-      <%= image_tag "logo.png", alt: "website logo", class: "img-fluid"%>
+      <%= image_tag "logo.png", alt: "website logo", class: "img-fluid", width: "30%"%>
       </div>
     </div>
   </div>
 
 
-<main class="form-signin">
+<main class="form-signin pb-4">
   <form>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -24,13 +24,13 @@
       <label for="floatingPassword">Password</label>
     </div>
 
-<% if devise_mapping.rememberable? %>
-    <div class="checkbox mb-3">
-      <label>
-       <%= f.check_box :remember_me, value: "Remember me"%> Remember me
-      </label>
-    </div>
- <% end %>
+    <% if devise_mapping.rememberable? %>
+        <div class="checkbox mb-3">
+          <label>
+          <%= f.check_box :remember_me, value: "Remember me"%> Remember me
+          </label>
+        </div>
+    <% end %>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
 <div class = "text"> <%= render "devise/shared/links" %> </div>
