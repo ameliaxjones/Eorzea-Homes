@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Listing:</strong>
+  <%= @order.listing_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user_id %>
+</p>
+
+<p>
+  <strong>Purchase price:</strong>
+  <%= @order.purchase_price %>
+</p>
+
+<p>
+  <strong>Game address:</strong>
+  <%= @order.game_address_id %>
+</p>
+
+<p>
+  <strong>Purchase status:</strong>
+  <%= @order.purchase_status %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

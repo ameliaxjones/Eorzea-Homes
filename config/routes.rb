@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :listings
   resources :game_addresses
   resources :h_cats

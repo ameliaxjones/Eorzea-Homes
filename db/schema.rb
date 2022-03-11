@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_033139) do
+ActiveRecord::Schema.define(version: 2022_03_11_010956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,19 @@ ActiveRecord::Schema.define(version: 2022_03_09_033139) do
     t.string "short_body"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.bigint "user_id", null: false
+    t.float "purchase_price"
+    t.bigint "game_address_id", null: false
+    t.boolean "purchase_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_address_id"], name: "index_orders_on_game_address_id"
+    t.index ["listing_id"], name: "index_orders_on_listing_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -104,4 +117,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_033139) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "game_addresses", "users"
   add_foreign_key "h_cats", "listings"
+  add_foreign_key "orders", "game_addresses"
+  add_foreign_key "orders", "listings"
+  add_foreign_key "orders", "users"
 end

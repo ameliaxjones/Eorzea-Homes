@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_many :listings
   has_many :game_addresses
+  has_many :orders
 
   ## Attaches avatar image to user
   has_one_attached :avatar
