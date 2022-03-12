@@ -2,12 +2,12 @@
 
 <p>
   <strong>Listing:</strong>
-  <%= @order.listing_id %>
+  <%= @order.listing.title %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @order.user_id %>
+  <strong>Designer:</strong>
+  <%= @designer.email %>
 </p>
 
 <p>
@@ -17,13 +17,9 @@
 
 <p>
   <strong>Game address:</strong>
-  <%= @order.game_address_id %>
+  <%= @order.game_address.friendlyaddress %>
 </p>
 
-<p>
-  <strong>Purchase status:</strong>
-  <%= @order.purchase_status %>
-</p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

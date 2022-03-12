@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
 #added designer page 
     def designers
+        @designers = User.where(seller: true)
     end
 
 

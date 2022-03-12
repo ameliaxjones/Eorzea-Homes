@@ -3,11 +3,13 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where(user_id: current_user.id)
   end
 
   # GET /orders/1 or /orders/1.json
   def show
+    # gets designer information
+    @designer = User.find_by(id: @order.listing.user_id)
   end
 
   # GET /orders/new

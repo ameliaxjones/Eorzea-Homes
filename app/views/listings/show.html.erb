@@ -11,10 +11,16 @@
               <div class="project-info-box">
                   <p><b>Details: </b> <%= @listing.body %></p>
                   <p><b>Designer:</b> <%= @listing.user.email %></p>
-                  <p><strong>Price : </strong> 
-                <p><button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-                </p>
+                  <p><strong>Price : </strong>
+
+                <%= link_to "Order now", new_order_path({:listing_id => @listing.id}), :class => "btn btn-primary" %>
+                
+
+<%# #only sellers can edit thre own lisitng %>
+              <% if @listing.user_id == current_user.id%>
                 <%= link_to 'Edit', edit_listing_path(@listing) %> |
+                <%end%>
+
 <%= link_to 'Back', listings_path %>
 
               </div>

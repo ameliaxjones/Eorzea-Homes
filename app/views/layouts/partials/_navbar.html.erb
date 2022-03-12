@@ -14,8 +14,8 @@
           <li><a href="/listings" class="nav-link px-2 link-dark">Listings</a></li>
           <% if user_signed_in? && current_user.seller == true %>
           <li><a href="/my_listings" class="nav-link px-2 link-dark">My Listings</a></li>
-          <li><a href="/orders" class="nav-link px-2 link-dark">My Orders</a></li>
           <%end%>
+          <li><a href="/orders" class="nav-link px-2 link-dark">My Orders</a></li>
         </ul>
           <%# drop down nav bar %>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
