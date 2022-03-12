@@ -12,6 +12,7 @@ import "channels"
 
 // = require jquery3
 // = require popper
+//= require bootstrap
 // = require bootstrap-sprockets
 require("trix")
 require("@rails/actiontext")
@@ -25,4 +26,5 @@ document.addEventListener('turbolinks:load', function(){
     var toastList = toastElList.map(function(toastEl) {
     return new bootstrap.Toast(toastEl).show() // No need for options; use the default options
     })
-})
+});
+

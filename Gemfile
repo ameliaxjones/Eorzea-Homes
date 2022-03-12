@@ -66,3 +66,5 @@ gem 'jquery-rails'
 gem 'file_validators'
 
 gem 'stripe'
+
+gem 'activestorage-validator'
