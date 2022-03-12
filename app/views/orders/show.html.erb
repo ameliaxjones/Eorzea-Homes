@@ -1,25 +1,19 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Listing:</strong>
   <%= @order.listing.title %>
 </p>
-
 <p>
   <strong>Designer:</strong>
   <%= @designer.email %>
 </p>
-
 <p>
   <strong>Purchase price:</strong>
   <%= @order.purchase_price %>
 </p>
-
 <p>
   <strong>Game address:</strong>
   <%= @order.game_address.friendlyaddress %>
 </p>
-
-
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

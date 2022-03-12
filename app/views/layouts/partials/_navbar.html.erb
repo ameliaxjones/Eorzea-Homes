@@ -1,27 +1,26 @@
 <%# #nav bar added %>
-
 <header class="p-3  border-bottom" >
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-          <%= image_tag "xs-logo.png", alt: "website logo", class: "img-fluid", width: "px"%>
-        </a>
-        <%# main header nav bar %>
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <%# <a class="navbar-brand" href="/">Eorzea Homes</a> %>
-          <li><a href="/pages/how" class="nav-link px-2 link-dark">How it works </a></li>
-          <li><a href="/pages/designers" class="nav-link px-2 link-dark">Designers</a></li>
-          <li><a href="/listings" class="nav-link px-2 link-dark">Listings</a></li>
-          <% if user_signed_in? && current_user.seller == true %>
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+        <%= image_tag "xs-logo.png", alt: "website logo", class: "img-fluid", width: "px"%>
+      </a>
+      <%# main header nav bar %>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <%# <a class="navbar-brand" href="/">Eorzea Homes</a> %>
+        <li><a href="/pages/how" class="nav-link px-2 link-dark">How it works </a></li>
+        <li><a href="/pages/designers" class="nav-link px-2 link-dark">Designers</a></li>
+        <li><a href="/listings" class="nav-link px-2 link-dark">Listings</a></li>
+        <% if user_signed_in? && current_user.seller == true %>
           <li><a href="/my_listings" class="nav-link px-2 link-dark">My Listings</a></li>
-          <%end%>
-          <li><a href="/orders" class="nav-link px-2 link-dark">My Orders</a></li>
-        </ul>
-          <%# drop down nav bar %>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
-        <% if user_signed_in? %>  
+        <%end%>
+        <li><a href="/orders" class="nav-link px-2 link-dark">My Orders</a></li>
+      </ul>
+      <%# drop down nav bar %>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+      <% if user_signed_in? %>
         <div class="dropdown text-end">
           <a href="/" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -34,12 +33,11 @@
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
           </ul>
         </div>
-        <%else%>
-        <div class="dropdown text-end"> 
-        <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
+      <%else%>
+        <div class="dropdown text-end">
+          <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
         </div>
-        <%end%>
-      </div>
+      <%end%>
     </div>
-  </header>
-
+  </div>
+</header>
