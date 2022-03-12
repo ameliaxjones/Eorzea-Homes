@@ -23,6 +23,10 @@ class ListingsController < ApplicationController
   def edit
   end
 
+  # #upload cover photo
+  # def photo  
+  #   @photo = current_user
+  # end
 
   # POST /listings or /listings.json
   def create

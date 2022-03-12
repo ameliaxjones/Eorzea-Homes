@@ -35,11 +35,12 @@
             <li><a class="dropdown-item" href="/listings/new">New listing</a></li>
             <li><%= link_to 'Profile', edit_user_registration_path, :class => 'dropdown-item' %></li>
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :get, :class => 'dropdown-item'  %></li>
           </ul>
         </div>
       <%else%>
         <div class="dropdown text-end">
+        <%# # got an error logging out so this time neded to switch it to get %>
           <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
         </div>
       <%end%>
