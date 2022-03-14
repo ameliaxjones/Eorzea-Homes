@@ -20,38 +20,28 @@
           </div>
         </div>
         <div class="house_img col mt-5">
-            <%# #shows the images that have been uploaded %>
-          
+          <%# #shows the images that have been uploaded %>
         </div>
       </div>
     </div>
   </div>
- 
-
-
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  
-  <div class="carousel-inner" role="listbox">
-    <% @listing.photos.each_with_index do |image, index| %>
-      <div class="item <%= index == 0 ? 'active' : '' %>">
-        <%= image_tag image, class: "d-block w-100" %>
-      <end>
-    <% end %>
-  </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
-
-<script> $('.carousel').carousel() </script>
-
-
-
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <% @listing.photos.each_with_index do |image, index| %>
+        <div class="item <%= index == 0 ? 'active' : '' %>">
+          <%= image_tag image, class: "d-block w-100" %>
+          <end>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <script>
+        $('.carousel').carousel()
+      </script>
