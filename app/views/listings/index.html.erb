@@ -8,7 +8,7 @@
             <%if listing.photos.attached?%>
               <%= image_tag listing.photos.first, alt: "website logo", class: "bd-placeholder-img card-img-top", width: "100%", height: "225"%>
             <%else%>
-              <%= image_tag "profile-image.jpeg", alt: "website logo", class: "bd-placeholder-img card-img-top", width: "100%", height: "225"%>
+              <%= image_tag "profile-image.jpg", alt: "website logo", class: "bd-placeholder-img card-img-top", width: "100%", height: "225"%>
             <%end%>
             <div class="card-body">
               <h4 class="card-title"><%= listing.title%></h4>
