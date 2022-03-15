@@ -1,48 +1,43 @@
 <%= form_with(model: order) do |form| %>
- <%# #checking to see if user has an address if not they need to add one %>
-    <% if GameAddress.where(user_id: current_user.id).empty?%>
-  <p>No added addresses please add one to profile to proceed<p>
-  <a href="/game_addresses" class=" btn btn-primary" >Add address</a>
-    <%else%>
-  <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
-      <ul>
-        <% order.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+  <%# #checking to see if user has an address if not they need to add one %>
+  <% if GameAddress.where(user_id: current_user.id).empty?%>
+    <p>No added addresses please add one to profile to proceed
+      <p>
+        <a href="/game_addresses" class=" btn btn-primary" >Add address</a>
+      <%else%>
+        <% if order.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+            <ul>
+              <% order.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :listing_id %>
-    <%= form.text_field :listing_id, :value => params[:listing_id] %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, :value => current_user.id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :purchase_price %>
-    <%= form.text_field :purchase_price, :value => Listing.find(params[:listing_id]).price  %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :game_address_id %>
-    <%# #drop down menu for address %>
-    <%= form.select :game_address_id, options_from_collection_for_select(GameAddress.order(:datacenter).where(user_id: current_user.id), "id", "friendlyaddress", current_user.id) %>
-  </div>
- 
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-  
-<% end %>
-<% end %>
+        <div class="field">
+          <%= form.label :listing_id %>
+          <%= form.text_field :listing_id, :value => params[:listing_id] %>
+        </div>
+        <div class="field">
+          <%= form.label :user_id %>
+          <%= form.text_field :user_id, :value => current_user.id %>
+        </div>
+        <div class="field">
+          <%= form.label :purchase_price %>
+          <%= form.text_field :purchase_price, :value => Listing.find(params[:listing_id]).price  %>
+        </div>
+        <div class="field">
+          <%= form.label :game_address_id %>
+          <%# #drop down menu for address %>
+          <%= form.select :game_address_id, options_from_collection_for_select(GameAddress.order(:datacenter).where(user_id: current_user.id), "id", "friendlyaddress", current_user.id) %>
+        </div>
+        <div class="actions">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+							data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+							data-description="Purchase"
+							data-amount="500"
+							data-locale="auto"></script>
+        </div>
+      <% end %>
+    <% end %>
