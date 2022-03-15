@@ -10,5 +10,5 @@ buyer = User.create(email: "buyer@maildrop.cc", password: "123456", password_con
 seller = User.create(email: "seller@maildrop.cc", password: "123456", password_confirmation: "123456", seller: true)
 
 10.times do
-Listing.create(title: "my house", short_body: "hfgiuhwiasheiunvug hruigaiusbvoufih iurgpa", user_id: seller.id, price: 300)
+Listing.create(title: "my house", short_body: "hfgiuhwiasheiunvug hruigaiusbvoufih iurgpa", user_id: seller.id, price: 300, open: true)
 end
