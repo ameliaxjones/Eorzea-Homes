@@ -3,3 +3,4 @@ tmp/
 log/
 public/packs
 db/*sqlite3
+storage/
