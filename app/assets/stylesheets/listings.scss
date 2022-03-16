@@ -28,12 +28,6 @@ h1{
   border-bottom: 1px solid #d5dadb;
 }
 
-.house_img {
-    
-    
-}
-
-
 p {
     font-family: "Barlow", sans-serif !important;
     font-weight: 300;
@@ -47,3 +41,51 @@ b, strong {
 }
  
 
+/*------- Edit/new form css -------*/
+
+.open-text{
+  font-weight: lighter;
+  font-size: x-small;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.link_to{
+  padding-left: 70px;
+}
+
+.link_to a{
+  color: #686c6d;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.link_to a:visited{
+  color: #2d2d2d;
+}
+
+.link_to a:hover {
+  text-decoration: underline;
+  color: #686c6d;
+}
+
+/*------- show form css -------*/
+
+.link_to_show{
+  padding-top: 10px;
+}
+
+.link_to_show a{
+  color: #686c6d;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.link_to_show a:visited{
+  color: #2d2d2d;
+}
+
+.link_to_show a:hover {
+  text-decoration: underline;
+  color: #686c6d;
+}
