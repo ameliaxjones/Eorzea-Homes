@@ -16,24 +16,22 @@
 <%# random genertated designers for home page %>
 <div class="container px-4 py-5" id="custom-cards">
   <h2 class="pb-2 border-bottom">Featured listings</h2>
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+  <div class="row  row-cols-lg-3 align-items-stretch g-4 py-5">
     <% @listings.each do |listing| %>
-      <div class="col">
+      <div class="col;">
         <%= link_to listing_path (listing) do %>
           <% if listing.photos.first %>
-            <div class="b_image card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url(<%= url_for(listing.photos.first)%>); ">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <ul class="d-flex list-unstyled mt-auto">
+            <div class="b_image card card-cover overflow-hidden rounded-5 " style="background-image: url(<%= url_for(listing.photos.first)%>); ">
+              <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                <ul class="d-flex  mt-auto">
                   <li class="me-auto">
                     <li class="d-flex align-items-center me-3">
-              
                     <% else %>
-                      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('assets/profile-image.jpg'); height: 300px;">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 ">
-                          <ul class="d-flex list-unstyled mt-auto">
+                      <div class="stock_img card card-cover h-100 overflow-hidden rounded-5 " style="background-image: url('assets/profile-image.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 ">
+                          <ul class="d-flex  mt-auto">
                             <li class="me-auto">
-                              <li class="d-flex align-items-center me-3">
-                                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#name"/></svg>
+                              <li class="d-flex align-items-center me-3 ">
                               <% end %>
                               <small><%= listing.title %></small>
                             </li>
@@ -44,4 +42,3 @@
                   </div>
                 <%end%>
               </div>
-             
