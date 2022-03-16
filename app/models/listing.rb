@@ -5,6 +5,6 @@ class Listing < ApplicationRecord
   validates :housingsize, presence: true
   belongs_to :user
   has_many_attached :photos
-  has_many :housingsizes
+  belongs_to :housingsize
   has_many :orders
 end

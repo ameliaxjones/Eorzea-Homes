@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_005456) do
+ActiveRecord::Schema.define(version: 2022_03_16_023903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,8 +91,8 @@ ActiveRecord::Schema.define(version: 2022_03_16_005456) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "short_body"
     t.text "body"
-    t.bigint "housingsizes_id"
-    t.index ["housingsizes_id"], name: "index_listings_on_housingsizes_id"
+    t.bigint "housingsize_id"
+    t.index ["housingsize_id"], name: "index_listings_on_housingsize_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_005456) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "game_addresses", "users"
   add_foreign_key "h_cats", "listings"
-  add_foreign_key "listings", "housingsizes", column: "housingsizes_id"
+  add_foreign_key "listings", "housingsizes"
   add_foreign_key "orders", "game_addresses"
   add_foreign_key "orders", "listings"
   add_foreign_key "orders", "users"
