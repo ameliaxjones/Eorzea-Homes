@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Housingsizes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @housingsizes.each do |housingsize| %>
+      <tr>
+        <td><%= housingsize.value %></td>
+        <td><%= link_to 'Show', housingsize %></td>
+        <td><%= link_to 'Edit', edit_housingsize_path(housingsize) %></td>
+        <td><%= link_to 'Destroy', housingsize, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Housingsize', new_housingsize_path %>

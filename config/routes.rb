@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :housingsizes
   resources :orders
   resources :listings
   resources :game_addresses

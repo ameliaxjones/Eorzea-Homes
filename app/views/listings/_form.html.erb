@@ -37,6 +37,15 @@
           <%= form.label :photos %>
           <%= form.file_field :photos, :multiple => true %>
         </div>
+
+<div class="field form-control form-group form-select">
+                  <%# #drop down menu for address %>
+                  <%= form.select :housingsize_id, options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id), class: "option-value"%>
+                </div>
+
+
+
+
         <div class="actions" class="btn btn-sm btn-outline-secondary">
           <%= form.submit %>
         </div>
@@ -45,3 +54,5 @@
   </div>
 </div>
 <% end %>
+
+

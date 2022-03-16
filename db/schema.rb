@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_12_064246) do
+ActiveRecord::Schema.define(version: 2022_03_16_005456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,12 @@ ActiveRecord::Schema.define(version: 2022_03_12_064246) do
     t.index ["listing_id"], name: "index_h_cats_on_listing_id"
   end
 
+  create_table "housingsizes", force: :cascade do |t|
+    t.string "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.float "price"
@@ -85,6 +91,8 @@ ActiveRecord::Schema.define(version: 2022_03_12_064246) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "short_body"
     t.text "body"
+    t.bigint "housingsizes_id"
+    t.index ["housingsizes_id"], name: "index_listings_on_housingsizes_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -118,6 +126,7 @@ ActiveRecord::Schema.define(version: 2022_03_12_064246) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "game_addresses", "users"
   add_foreign_key "h_cats", "listings"
+  add_foreign_key "listings", "housingsizes", column: "housingsizes_id"
   add_foreign_key "orders", "game_addresses"
   add_foreign_key "orders", "listings"
   add_foreign_key "orders", "users"

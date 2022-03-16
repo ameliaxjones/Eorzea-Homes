@@ -1,0 +1,2 @@
+class Housingsize < ApplicationRecord
+end
