@@ -1,69 +1,47 @@
 <div class="hero">
-    <div class="container">     
-    <div class="hero-content"> 
-      <div class="row"> 
-      </div> 
+  <div class="container">
+    <div class="hero-content">
+      <div class="row">
+      </div>
     </div>
-  </div> 
+  </div>
 </div>
 <%# hero image title %>
 <div class="px-4 pt-5 my-5 text-center">
-    <h1 class="display-4 fw-bold">Welcome to Eorzia Homes!</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">Looking for an interior designer in Final Fantasy xiv? You’ve come to the right place. From each Data Center, we’ve pulled together a list of the best Eorzea interior decorators and designers so that you know who to call when you’re ready to overhaul your space. </p>
-    </div>
+  <h1 class="display-4 fw-bold">Welcome to Eorzia Homes!</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Looking for an interior designer in Final Fantasy xiv? You’ve come to the right place. From each Data Center, we’ve pulled together a list of the best Eorzea interior decorators and designers so that you know who to call when you’re ready to overhaul your space. </p>
   </div>
-
-
+</div>
 <%# random genertated designers for home page %>
-
 <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom">Featured designeres</h2>
-
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+  <h2 class="pb-2 border-bottom">Featured listings</h2>
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <% @listings.each do |listing| %>
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#name"/></svg>
-                <small>name</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>name</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto"></li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>Name</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        <%= link_to listing_path (listing) do %>
+          <% if listing.photos.first %>
+            <div class="b_image card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url(<%= url_for(listing.photos.first)%>); ">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <li class="d-flex align-items-center me-3">
+              
+                    <% else %>
+                      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('assets/profile-image.jpg'); height: 300px;">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 ">
+                          <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                              <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#name"/></svg>
+                              <% end %>
+                              <small><%= listing.title %></small>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                <%end%>
+              </div>
+             
