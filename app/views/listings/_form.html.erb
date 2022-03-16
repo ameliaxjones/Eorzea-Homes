@@ -20,16 +20,16 @@
           <%= form.label :price, class: "small mb-1"%>
           <%= form.text_field :price, class: "form-control" %>
         </div>
-        <div class="field pb-1">
-          <p class=" open-text"> If listing is open please check box </p>
+        <div class="field pb-1 pt-2">
           <%= form.label :open, class: "small mb-1" %>
           <%= form.check_box :open %>
+          <p class=" open-text"> If listing is open please check box </p>
         </div>
-        <div class="field pb-1">
+        <div class="field pb-1 pt-2">
           <%= form.label :short_body, class: "small mb-1" %>
           <%= form.text_field :short_body, class: "form-control" %>
         </div>
-        <div class="field pb-1">
+        <div class="field pb-1 pt-2">
           <%= form.label :body, class: "small mb-1" %>
           <%= form.text_area :body, class: "form-control"%>
         </div>
@@ -37,13 +37,15 @@
           <%= form.label :photos %>
           <%= form.file_field :photos, :multiple => true %>
         </div>
-        <div class="field form-control form-group form-select pb-1">
+        
           <%# #drop down menu for address %>
           <%= form.label :housing_size %>
-          <%= form.select :housing_size_id, options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id), class: "option-value"%>
+          <div class="field form-control form-group form-select pb-1">
+          <%= form.select :housing_size_id,  options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id )%>
         </div>
+        <p class=" open-text pt-1"> Please select a housing size </p>
         <div class="actions pt-4 ">
-          <%= form.submit %>
+          <%= form.submit class: "form-control"%>
         </div>
       </div>
     </div>
