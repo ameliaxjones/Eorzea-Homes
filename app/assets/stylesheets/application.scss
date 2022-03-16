@@ -17,3 +17,45 @@
 
 @import "trix/dist/trix";
 @import "./actiontext.scss";
+
+
+
+.link_to{
+    padding-left: 70px;
+  }
+  
+  .link_to a{
+    color: #686c6d;
+    font-weight: 200;
+    text-decoration: none;
+  }
+  
+  .link_to a:visited{
+    color: #2d2d2d;
+  }
+  
+  .link_to a:hover {
+    text-decoration: underline;
+    color: #686c6d;
+  }
+  
+  /*------- show buttons css -------*/
+  
+  .link_to_show{
+    padding-top: 10px;
+  }
+  
+  .link_to_show a{
+    color: #686c6d;
+    font-weight: 200;
+    text-decoration: none;
+  }
+  
+  .link_to_show a:visited{
+    color: #2d2d2d;
+  }
+  
+  .link_to_show a:hover {
+    text-decoration: underline;
+    color: #686c6d;
+  }
