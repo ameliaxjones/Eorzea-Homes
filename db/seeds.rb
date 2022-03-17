@@ -16,3 +16,15 @@ seller = User.create(email: "seller@maildrop.cc", password: "123456", password_c
 10.times do
 Listing.create(title: "my house", short_body: "hfgiuhwiasheiunvug hruigaiusbvoufih iurgpa", user_id: seller.id, price: 300, open: true, housingsize_id: large.id)
 end
+
+seller = User.create(email: yokkio@maildrop.cc,
+                    password: "123456,"
+                    password_confirmation: "123456",
+                    seller: true
+                    
+
+
+
+
+
+)
