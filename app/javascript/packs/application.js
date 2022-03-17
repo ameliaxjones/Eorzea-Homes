@@ -13,7 +13,7 @@ require("trix")
 require("@rails/actiontext")
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', function(){
