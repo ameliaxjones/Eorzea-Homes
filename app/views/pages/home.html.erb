@@ -1,44 +1,48 @@
-<div class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="row">
+<div class="whole_page bg-light">
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="row">
+        </div>
       </div>
     </div>
   </div>
-</div>
-<%# hero image title %>
-<div class="px-4 pt-5 my-5 text-center">
-  <h1 class="display-4 fw-bold">Welcome to Eorzia Homes!</h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Looking for an interior designer in Final Fantasy xiv? You’ve come to the right place. From each Data Center, we’ve pulled together a list of the best Eorzea interior decorators and designers so that you know who to call when you’re ready to overhaul your space. </p>
+  <%# hero image title %>
+  <div class="px-4 pt-5 my-5 text-center">
+    <h1 class="display-4 fw-bold">Welcome to Eorzia Homes!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Looking for an interior designer in Final Fantasy xiv? You’ve come to the right place. From each Data Center, we’ve pulled together a list of the best Eorzea interior decorators and designers so that you know who to call when you’re ready to overhaul your space. </p>
+    </div>
   </div>
-</div>
-<%# random genertated designers for home page %>
-<div class="container px-4 py-5" id="custom-cards">
-  <h2 class="pb-2 border-bottom">Featured listings</h2>
-  <div class="row  row-cols-lg-3 align-items-stretch g-4 py-5">
-    <% @listings.each do |listing| %>
-      <div class="col;">
-        <%= link_to listing_path (listing) do %>
-          <% if listing.photos.first %>
-            <div class="b_image card card-cover overflow-hidden rounded-5 " style="background-image: url(<%= url_for(listing.photos.first)%>); ">
-              <div class="d-flex flex-column h-100 p-5 pb-3  ">
-                <ul class="d-flex  mt-auto">
-                  <li class="me-auto">
-                    <li class="d-flex align-items-center me-3">
-                    <% else %>
-                      <div class="stock_img card card-cover h-100 overflow-hidden rounded-5 " style="background-image: url('assets/profile-image.jpg');">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 ">
-                          <ul class="d-flex  mt-auto">
-                            <li class="me-auto">
-                              <li class="d-flex align-items-center me-3 ">
-                              <% end %>
-                              <small><%= listing.title %></small>
-                            </li>
-                          </ul>
+  <%# random genertated designers for home page %>
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Featured listings</h2>
+    <div class="row  row-cols-lg-3 align-items-stretch g-4 py-5">
+      <% @listings.each do |listing| %>
+        <div class="col;">
+          <%= link_to listing_path (listing) do %>
+            <% if listing.photos.first %>
+              <div class="b_image card card-cover overflow-hidden rounded-5 " style="background-image: url(<%= url_for(listing.photos.first)%>); ">
+                <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                  <ul class="d-flex  mt-auto">
+                    <li class="me-auto">
+                      <li class="d-flex align-items-center me-3">
+                      <% else %>
+                        <div class="stock_img card card-cover h-100 overflow-hidden rounded-5 " style="background-image: url('assets/profile-image.jpg');">
+                          <div class="d-flex flex-column h-100 p-5 pb-3 ">
+                            <ul class="d-flex  mt-auto">
+                              <li class="me-auto">
+                                <li class="d-flex align-items-center me-3 ">
+                                <% end %>
+                                <small><%= listing.title %></small>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    <% end %>
-                  </div>
-                <%end%>
+                      <% end %>
+                    </div>
+                  <%end%>
+                </div>
               </div>
+            </div>
+          </div>
