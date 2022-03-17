@@ -11,7 +11,7 @@ class User < ApplicationRecord
   ## Attaches avatar image to user
   has_one_attached :avatar
 
-  ## Validations for users
+  ## Validations
   validates :avatar, file_size: { less_than_or_equal_to: 5.megabytes },
   file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
   

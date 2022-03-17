@@ -5,7 +5,7 @@ class GameAddress < ApplicationRecord
     validates :plot, presence: true
     validates :ward, presence: true
 
-# creates an easier way to read the addresses 
+
     def friendlyaddress
         "#{self.datacenter} #{self.location}  p#{self.plot.to_i} w#{self.ward.to_i} #{self.appartment}" 
     end
