@@ -9,18 +9,8 @@ import "channels"
 
 
 
+// = require jquery3
+
 require("trix")
 require("@rails/actiontext")
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
-
-document.addEventListener('turbolinks:load', function(){
-    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-    var toastList = toastElList.map(function(toastEl) {
-    return new bootstrap.Toast(toastEl).show() // No need for options; use the default options
-    })
-});
-
-import 'trix/dist/trix.css';
