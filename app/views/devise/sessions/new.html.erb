@@ -1,33 +1,43 @@
-<div class="wholepage bg-light" >
+
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="px-4 pb-3 my-5 mt-0 text-center">
-    <div class="overflow-hidden" style="max-height: 35vh;">
-      <div class="container px-5 mt-0">
-        <%= image_tag "logo.png", alt: "website logo", class: "img-fluid", width: "30%"%>
+  
+ <div class="px-4 pb-3 my-5 text-center">
+    <div class="overflow-hidden" style="max-height: 27vh;">
+      <div class="container px-5">
+      <%= image_tag "logo.png", alt: "website logo", class: "img-fluid", width: "30%"%>
       </div>
     </div>
   </div>
-  <main class="form-signin pb-4">
-    <form>
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-      <div class="form-floating">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "floatingInput"%>
-        <label for="floatingInput">Email address</label>
-      </div>
-      <div class="form-floating">
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"%>
-        <label for="floatingPassword">Password</label>
-      </div>
-      <% if devise_mapping.rememberable? %>
+
+
+<main class="form-signin pb-4">
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "floatingInput"%>
+    <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"%>
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
         <div class="checkbox mb-3">
           <label>
-            <%= f.check_box :remember_me, value: "Remember me"%> Remember me
+          <%= f.check_box :remember_me, value: "Remember me"%> Remember me
           </label>
         </div>
-      <% end %>
-      <button class="w-100 btn btn-lg btn-secondary" type="submit">Sign in</button>
-      <div class = "text"> <%= render "devise/shared/links" %> </div>
-    </form>
-  </main>
+    <% end %>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+<div class = "text"> <%= render "devise/shared/links" %> </div>
+  </form>
+</main>
+
 <% end %>
-</div>
+
+
+

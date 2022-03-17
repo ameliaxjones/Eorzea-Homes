@@ -30,7 +30,14 @@
     text-decoration: none;
   }
   
-
+  .link_to a:visited{
+    color: #2d2d2d;
+  }
+  
+  .link_to a:hover {
+    text-decoration: underline;
+    color: #686c6d;
+  }
   
   /*------- show buttons css -------*/
   
@@ -50,36 +57,5 @@
   
   .link_to_show a:hover {
     text-decoration: underline;
-    
-  }
-
-
-  /*------- devise buttons css -------*/
-
-  a{
     color: #686c6d;
-    font-weight: 200;
-    text-decoration: none;
   }
-  
-   a:visited{
-    color: #2d2d2d;
-  }
-  
-  .link_to_d a:hover {
-    text-decoration: underline;
-    
-  }
-
-  .login a {
-      padding-left: 7px;
-  }
-
-  /*------- devise sign up page css -------*/
-
-  
-.pass_mini{
-    font-size: x-small;
-    padding-top: 0%;
-    padding-bottom: 10px;
-}
