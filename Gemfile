@@ -68,3 +68,5 @@ gem 'file_validators'
 gem 'stripe'
 
 gem 'activestorage-validator'
+
+gem 'aws-sdk-s3'
