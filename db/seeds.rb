@@ -97,7 +97,17 @@ faeriepeach= User.create(email: "faeriepeach@maildrop.cc",
 )
 faeriepeach.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/p.jpg')), filename: 'p.jpg')
 
-faeriepeach_listing = Listing.create(title: "Space bunk", short_body: "For all the space travllers out there", body: "Do you like space? Do you wish you were a space traveller visiting different planets? Then this is the build for you! Which a small space like the small rooms I have been able to create this space bunk complete with a space view of twinkling starts" ,user_id: faeriepeach.id, price: 50, open: true, housingsize_id: small.id)
+faeriepeach_listing = Listing.create(title: "The Viridian Suite", short_body: "A luxe, romantic hotel room perfect for a proposal or a  date", body: "This was a fun room to build especially with the indoor hot tub! The marble flooring around it really ties it all together. If you want to change the colours of the walls and cushions let me know beforehand, please!" ,user_id: faeriepeach.id, price: 120, open: true, housingsize_id: medium.id)
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/5.jpg')), filename: '5.jpg')
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/6.jpg')), filename: '6.jpg')
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/7.jpg')), filename: '7.jpg')
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/8.jpg')), filename: '8.jpg')
+
+faeriepeach_listing = Listing.create(title: "Space bunk", short_body: "For all the space travellers out there", body: "Do you like space? Do you wish you were a space traveller visiting different planets? Then this is the build for you! Which a small space like the small rooms I have been able to create this space bunk complete with a space view of twinkling starts" ,user_id: faeriepeach.id, price: 50, open: true, housingsize_id: small.id)
 
 faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/1.jpg')), filename: '1.jpg')
 
@@ -108,6 +118,9 @@ faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/imag
 faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/4.jpg')), filename: '4.jpg')
 
 
+
+
+
 alauradanon= User.create(email: "alauradanon@maildrop.cc",
     password: "123456",
     password_confirmation: "123456",
@@ -115,7 +128,7 @@ alauradanon= User.create(email: "alauradanon@maildrop.cc",
 )
 alauradanon.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/profile1.jpg')), filename: 'profile1.jpg')
 
-alauradanon_listing = Listing.create(title: "stormy night dungeon cell ", short_body: "Perfect for locking up people who complain about parts of your house being locked off ", body: "A fun build  inspired by dark souls \o/ a small dungeon cell with a perfect stormy background.  Its quite a cosy feeling, only the best for my prisoners haha.  This was done in an apartment but can also be transferred into an FC room!" ,user_id: alauradanon.id, price: 95, open: true, housingsize_id: appartment.id)
+alauradanon_listing = Listing.create(title: "Stormy night dungeon cell ", short_body: "Perfect for locking up people who complain about parts of your house being blocked off ", body: "A fun build  inspired by dark souls \o/ a small dungeon cell with a perfect stormy background.  Its quite a cosy feeling, only the best for my prisoners haha.  This was done in an apartment but can also be transferred into an FC room!" ,user_id: alauradanon.id, price: 95, open: true, housingsize_id: appartment.id)
 
 alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/1.jpg')), filename: '1.jpg')
 
@@ -124,3 +137,35 @@ alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/imag
 alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/3.jpg')), filename: '3.jpg')
 
 alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/4.jpg')), filename: '4.jpg')
+
+
+alauradanon_listing = Listing.create(title: "Mayday! Mayday!", short_body: "The SS Fluffy submarine is under attack!  Power to the controls has been lost and water is pouring in!", body: "A disaster room, about to flood if help doesn't arrive soon!  This is built around a small house with all slots being taken and no access to the basement due to glitches.  But enjoy the ambient sounds of water trying to rush into the submarine ;o " ,user_id: alauradanon.id, price: 105, open: true, housingsize_id: small.id)
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/5.jpg')), filename: '5.jpg')
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/6.jpg')), filename: '6.jpg')
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/7.jpg')), filename: '7.jpg')
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/8.jpg')), filename: '8.jpg')
+
+
+
+
+camillus= User.create(email: "camillus@maildrop.cc",
+    password: "123456",
+    password_confirmation: "123456",
+    seller: true
+)
+camillus.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/profile2.jpg')), filename: 'profile1.jpg')
+
+camillus_listing = Listing.create(title: "Modern bar", short_body: "Fresh clean mordern bar build", body: "This super modern build is in the basement of a house, It can be any size house since this is the basement.  The cost of the build is a set price no matter the size of the house itself as all basements are the same size. Colours can be changed but i think it works best with whites, creams and marbles. 
+    " ,user_id: camillus.id, price: 100, open: true, housingsize_id: small.id)
+
+camillus_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/1.jpg')), filename: '1.jpg')
+
+camillus_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/2.jpg')), filename: '2.jpg')
+
+camillus_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/3.jpg')), filename: '3.jpg')
+
+camillus_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/4.jpg')), filename: '4.jpg')
