@@ -7,6 +7,7 @@ class ListingsController < ApplicationController
   end
 
   def my_listings
+    # creates a listing that finds out who the current user is
     @listings = Listing.where(user_id: current_user.id)
   end
 

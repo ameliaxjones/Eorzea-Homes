@@ -8,12 +8,13 @@ class OrdersController < ApplicationController
 
   # GET /orders/1 or /orders/1.json
   def show
-    # gets designer information
+    # gets designer information for rending order page 
     @designer = User.find_by(id: @order.listing.user_id)
   end
 
   # GET /orders/new
   def new
+  # cretes new orders with params for future use
     @order = Order.new
     @listing = Listing.find(params[:listing_id])
   end
@@ -25,7 +26,7 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
-
+    # shows who the order belongs too
     @order.user_id = current_user.id
     
     respond_to do |format|
