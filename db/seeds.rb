@@ -90,3 +90,37 @@ fenrir_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/pr
 fenrir_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/fenrir/4.jpg')), filename: '4.jpg')
 
 
+faeriepeach= User.create(email: "faeriepeach@maildrop.cc",
+    password: "123456",
+    password_confirmation: "123456",
+    seller: true
+)
+faeriepeach.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/p.jpg')), filename: 'p.jpg')
+
+faeriepeach_listing = Listing.create(title: "Space bunk", short_body: "For all the space travllers out there", body: "Do you like space? Do you wish you were a space traveller visiting different planets? Then this is the build for you! Which a small space like the small rooms I have been able to create this space bunk complete with a space view of twinkling starts" ,user_id: faeriepeach.id, price: 50, open: true, housingsize_id: small.id)
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/1.jpg')), filename: '1.jpg')
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/2.jpg')), filename: '2.jpg')
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/3.jpg')), filename: '3.jpg')
+
+faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/4.jpg')), filename: '4.jpg')
+
+
+alauradanon= User.create(email: "alauradanon@maildrop.cc",
+    password: "123456",
+    password_confirmation: "123456",
+    seller: true
+)
+alauradanon.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/profile1.jpg')), filename: 'profile1.jpg')
+
+alauradanon_listing = Listing.create(title: "stormy night dungeon cell ", short_body: "Perfect for locking up people who complain about parts of your house being locked off ", body: "A fun build  inspired by dark souls \o/ a small dungeon cell with a perfect stormy background.  Its quite a cosy feeling, only the best for my prisoners haha.  This was done in an apartment but can also be transferred into an FC room!" ,user_id: alauradanon.id, price: 95, open: true, housingsize_id: appartment.id)
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/1.jpg')), filename: '1.jpg')
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/2.jpg')), filename: '2.jpg')
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/3.jpg')), filename: '3.jpg')
+
+alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/4.jpg')), filename: '4.jpg')
