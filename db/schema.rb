@@ -65,17 +65,6 @@ ActiveRecord::Schema.define(version: 2022_03_16_023903) do
     t.index ["user_id"], name: "index_game_addresses_on_user_id"
   end
 
-  create_table "h_cats", force: :cascade do |t|
-    t.bigint "listing_id", null: false
-    t.boolean "small"
-    t.boolean "med"
-    t.boolean "large"
-    t.boolean "apartment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["listing_id"], name: "index_h_cats_on_listing_id"
-  end
-
   create_table "housingsizes", force: :cascade do |t|
     t.string "value"
     t.datetime "created_at", precision: 6, null: false
@@ -125,7 +114,6 @@ ActiveRecord::Schema.define(version: 2022_03_16_023903) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "game_addresses", "users"
-  add_foreign_key "h_cats", "listings"
   add_foreign_key "listings", "housingsizes"
   add_foreign_key "orders", "game_addresses"
   add_foreign_key "orders", "listings"

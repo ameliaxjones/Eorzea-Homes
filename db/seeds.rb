@@ -20,7 +20,7 @@ yokkio = User.create(email: "yokkio@maildrop.cc",
                     seller: true
 )
 
-yokkio = GameAddress.create( datacenter: "aether", location: "goblet", plot: 2, ward: 3, user_id: yokkio.id)
+yokkio_address = GameAddress.create( datacenter: "aether", location: "goblet", plot: 2, ward: 3, user_id: yokkio.id)
 
 yokkio.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/yokkio_med/profile.png')), filename: 'profile.png')
 
@@ -40,7 +40,7 @@ orangejuice = User.create(email: "orangejuice@maildrop.cc",
     seller: true
 )
 
-orangejuice = GameAddress.create( datacenter: "faerie", location: "mist", plot: 4, ward: 60, user_id: orangejuice.id)
+orangejuice_address = GameAddress.create( datacenter: "faerie", location: "mist", plot: 4, ward: 60, user_id: orangejuice.id)
 
 orangejuice.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/orangejuice/profile.jpg')), filename: 'profile.jpg')
 
@@ -62,7 +62,7 @@ lulu = User.create(email: "lulu@maildrop.cc",
     seller: true
 )
 
-lulu = GameAddress.create( datacenter: "goblin", location: "lavender beds", plot: 20, ward: 40, user_id: lulu.id)
+lulu_address = GameAddress.create( datacenter: "goblin", location: "lavender beds", plot: 20, ward: 40, user_id: lulu.id)
 
 lulu.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/lulu/profile.jpg')), filename: 'profile.jpg')
 
@@ -83,7 +83,7 @@ fenrir = User.create(email: "fenrir@maildrop.cc",
     seller: true
 )
 
-fenrir = GameAddress.create( datacenter: "Exodus", location: "Shirogane", plot: 1, ward: 35, user_id: yokkio.id)
+fenrir_address = GameAddress.create( datacenter: "Exodus", location: "Shirogane", plot: 1, ward: 35, user_id: yokkio.id)
 
 fenrir.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/fenrir/profile.jpg')), filename: 'profile.jpg')
 
@@ -108,7 +108,7 @@ faeriepeach= User.create(email: "faeriepeach@maildrop.cc",
     seller: true
 )
 
-faeriepeach = GameAddress.create( datacenter: "Shiva", location: "Lavender Beds", plot: 2, ward: 3, user_id: faeriepeach.id)
+faeriepeach_address = GameAddress.create( datacenter: "Shiva", location: "Lavender Beds", plot: 2, ward: 3, user_id: faeriepeach.id)
 
 faeriepeach.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/p.jpg')), filename: 'p.jpg')
 
@@ -139,7 +139,7 @@ alauradanon= User.create(email: "alauradanon@maildrop.cc",
     seller: true
 )
 
-alauradanon = GameAddress.create( datacenter: "Anima", location: "goblet", plot: 22, ward: 54, user_id: alauradanon.id)
+alauradanon_address = GameAddress.create( datacenter: "Anima", location: "goblet", plot: 22, ward: 54, user_id: alauradanon.id)
 
 
 alauradanon.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/profile1.jpg')), filename: 'profile1.jpg')
@@ -173,7 +173,7 @@ camillus= User.create(email: "camillus@maildrop.cc",
     seller: true
 )
 
-camillus = GameAddress.create( datacenter: "tonberry", location: "mist", plot: 1, ward: 40, user_id: camillus.id)
+camillus_address = GameAddress.create( datacenter: "tonberry", location: "mist", plot: 1, ward: 40, user_id: camillus.id)
 
 
 camillus.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/profile2.jpg')), filename: 'profile1.jpg')
