@@ -1,18 +1,22 @@
-<div class="card bg-light">
+<div class="card bg-light ">
   <h1> Designers </h1>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 gutters-sm">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gutters-sm p-4">
     <% @designers.each do |designer| %>
       <div class="col mb-3">
         <div class="card">
-          <img src="https://via.placeholder.com/340x120/FFB6C1/000000" alt="Cover" class="card-img-top">
+          
           <div class="card-body text-center">
-            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width:100px;margin-top:-65px" alt="User" class="img-fluid img-thumbnail rounded-circle border-0 mb-3">
-            <h5 class="card-title"></h5>
-            <p class="text-secondary mb-1">Full Stack Developer</p>
-            <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+          <%if designer.avatar.attached?%>
+          <%= image_tag designer.avatar, class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "120px", height: "32"%>
+          <%else%>
+            <%= image_tag "profile-image.jpg", class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "120px", height: "32px", margintop: "65px"%>
+          <%end%>
+            
+            <h5 class="card-title"><%= designer.email%></h5>
+            <p class="text-muted font-size-sm"> designer home address</p>
           </div>
-          <div class="card-footer">
-            <button class="btn btn-light btn-sm bg-white has-icon btn-block" type="button"><i class="material-icons">Reviews</i>
+          <div class="card-footer  ">
+            <button class=" btn btn-sm btn-outline-secondary " type="button"><i class="material-icons">Reviews</i>
             </div>
           </div>
         </div>

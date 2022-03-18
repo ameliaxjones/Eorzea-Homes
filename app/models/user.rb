@@ -15,4 +15,8 @@ class User < ApplicationRecord
   validates :avatar, file_size: { less_than_or_equal_to: 5.megabytes },
   file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
   
+  private
+    def set_username
+      self.username = "#{self.email[/^[^@]+/]}-#{SecureRandom.hex(1)}"
+    end
 end
