@@ -83,7 +83,7 @@ fenrir = User.create(email: "fenrir@maildrop.cc",
     seller: true
 )
 
-fenrir_address = GameAddress.create( datacenter: "Exodus", location: "Shirogane", plot: 1, ward: 35, user_id: yokkio.id)
+fenrir_address = GameAddress.create( datacenter: "Exodus", location: "Shirogane", plot: 1, ward: 35, user_id: fenrir.id)
 
 fenrir.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/fenrir/profile.jpg')), filename: 'profile.jpg')
 
