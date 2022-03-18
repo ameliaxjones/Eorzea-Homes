@@ -55,6 +55,10 @@
               <%= f.label :email, class: "small mb-1" %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
             </div>
+            <div class="field">
+        <%= f.label "Please tick if you want to be designer", class: "small mb-3" %>
+          <%= f.check_box :seller %>
+          </div>
             <!-- Form Row-->
             <%= f.submit "Update", class: "btn btn-sm btn-outline-secondary" %>
           </div>
@@ -66,8 +70,8 @@
     <% end %>
     <!-- Form ends  DO NOT PUT DELETE BUTTON INSIDE THIS FORM IT WILL DELETE USERS WHEN TRYING TO SAVE -->
   <% end %>
-  <div class="row pb-2">
-    <div class="col-xl-4 pb-2 mb-2">
+  <div class=" row pb-2">
+    <div class="delete_block col-xl-4 pb-2 ">
       <!-- delete  button-->
       <div class="card ">
         <div class="card-header">Unhappy?</div>
