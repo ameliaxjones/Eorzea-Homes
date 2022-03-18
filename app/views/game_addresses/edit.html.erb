@@ -1,6 +1,10 @@
-<h1>Editing Game Address</h1>
-
-<%= render 'form', game_address: @game_address %>
-
-<%= link_to 'Show', @game_address %> |
-<%= link_to 'Back', game_addresses_path %>
+<div class= "whole_page bg-light">
+  <div class=" d-flex justify-content-center flex-nowrap pt-3 " >
+    <div class="card  ">
+      <div class="card-header"> Edit game address</div>
+      <%= render 'form', game_address: @game_address %>
+      <%= link_to 'Show', @game_address %> |
+      <%= link_to 'Back', game_addresses_path %>
+    </div>
+  </div>
+</div>

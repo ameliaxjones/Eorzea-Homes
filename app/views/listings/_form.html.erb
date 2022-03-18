@@ -1,4 +1,4 @@
-<div class="whole_container bg-light ">
+
   <div class="form container">
     <%= form_with(model: listing) do |form| %>
       <% if listing.errors.any? %>
@@ -37,11 +37,12 @@
           <%= form.label :photos %>
           <%= form.file_field :photos, :multiple => true %>
         </div>
-        
-          <%# #drop down menu for address %>
-          <%= form.label :housingsize %>
-          <%= form.select :housingsize_id,  options_from_collection_for_select(Housingsize.order(:value).all, "id", "value")%>
-          <p class=" open-text pt-1"> Please select a housing size </p>
+        <%# #drop down menu for address %>
+        <%= form.label :housingsize %>
+        <div class="field form-control form-group form-select pb-1">
+          <%= form.select :housingsize_id,  options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id)%>
+        </div>
+        <p class=" open-text pt-1"> Please select a housing size </p>
         <div class="actions pt-4 ">
           <%= form.submit class: "form-control"%>
         </div>

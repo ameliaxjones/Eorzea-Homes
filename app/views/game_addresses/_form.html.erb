@@ -1,42 +1,43 @@
-<%= form_with(model: game_address) do |form| %>
-  <% if game_address.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(game_address.errors.count, "error") %> prohibited this game_address from being saved:</h2>
 
-      <ul>
-        <% game_address.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+  <div class='container'>
+    
+      <%= form_with(model: game_address) do |form| %>
+        <% if game_address.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(game_address.errors.count, "error") %> prohibited this game_address from being saved:</h2>
+            <ul>
+              <% game_address.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+        <div class="card-body">
+          <div class="field pb-1">
+            <%= form.label :datacenter, class: "small mb-1" %>
+            <%= form.text_field :datacenter, class: "form-control" %>
+          </div>
+          <div class="field pb-1">
+            <%= form.label :location, class: "small mb-1" %>
+            <%= form.text_field :location, class: "form-control" %>
+          </div>
+          <div class="field pb-1">
+            <%= form.label :plot, class: "small mb-1" %>
+            <%= form.text_field :plot, class: "form-control" %>
+          </div>
+          <div class="field pb-1">
+            <%= form.label :ward, class: "small mb-1" %>
+            <%= form.text_field :ward, class: "form-control" %>
+          </div>
+          <div class="field pb-1">
+            <%= form.label :roomnumber, class: "small mb-1" %>
+            <%= form.text_field :roomnumber, class: "form-control" %>
+          </div>
+          <div class="actions ppt-4">
+            <%= form.submit class: "form-control mt-3 btn btn-md btn-outline-secondary " %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :datacenter %>
-    <%= form.text_field :datacenter %>
   </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :plot %>
-    <%= form.text_field :plot %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ward %>
-    <%= form.text_field :ward %>
-  </div>
-
-  <div class="field">
-    <%= form.label :roomnumber %>
-    <%= form.text_field :roomnumber %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

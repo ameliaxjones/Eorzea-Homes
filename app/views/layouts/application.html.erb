@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -25,46 +22,15 @@
     </style>
     <%# all my stylesheets  %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
     <%# #had to make turbo false to make nav bar work %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'false' %>
-
-<%# bootstrap js bundle %>
+    <%# bootstrap js bundle %>
     <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </head>
-  
-
-
   <body>
-
-
-   <%= render 'layouts/partials/navbar' %>
-
-
-
-
-
-  
-
+    <%= render 'layouts/partials/navbar' %>
     <%= yield %>
-   
-
- 
- 
-
-  
-  <%= toastr_flash %>
-
-
-
-<%= render 'layouts/partials/footer' %>
-
-
-
-
-
+    <%= toastr_flash %>
+    <%= render 'layouts/partials/footer' %>
   </body>
-
-
-
 </html>

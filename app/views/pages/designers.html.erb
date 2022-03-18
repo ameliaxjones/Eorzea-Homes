@@ -12,8 +12,10 @@
             <%= image_tag "profile-image.jpg", class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "120px", height: "32px", margintop: "65px"%>
           <%end%>
             
-            <h5 class="card-title"><%= designer.email%></h5>
-            <p class="text-muted font-size-sm"> designer home address</p>
+            <h5 class="card-title"><%= designer.username.capitalize%></h5>
+            <% if !designer.game_addresses.empty? %>
+            <p class="text-muted font-size-sm"> <%= designer.game_addresses.first.datacenter.capitalize %> </p>
+            <% end %>
           </div>
           <div class="card-footer  ">
             <button class=" btn btn-sm btn-outline-secondary " type="button"><i class="material-icons">Reviews</i>
