@@ -2,16 +2,18 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="row pb-2">
-      <div class="col-xl-4 ">
+      <div class="col-xl-4 mt-5 ">
         <!-- Profile picture card-->
         <div class="card mb-4 mb-xl-0 pb-3">
           <div class="card-header">Profile Picture</div>
           <div class="card-body text-center">
             <% if current_user.avatar.present? %>
-              <br />
-              
+              <br>
               <%= image_tag current_user.avatar, class: "img-account-profile rounded-circle mb-2", width: "50%" %>
-            <% end %>
+              <%else%>
+            <%= image_tag "profile-image.jpg", class: "rounded-circle ", width: "50%" %>
+          <%end%>
+            
             <!-- Profile picture help block-->
             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
             <!-- Profile picture upload button-->
@@ -26,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-8">
+      <div class="col-xl-8 mt-5">
         <!-- Account details card-->
         <div class="card mb-4">
           <div class="card-header">Account Details</div>
@@ -70,7 +72,7 @@
     <% end %>
     <!-- Form ends  DO NOT PUT DELETE BUTTON INSIDE THIS FORM IT WILL DELETE USERS WHEN TRYING TO SAVE -->
   <% end %>
-  <div class=" row pb-2">
+  <div class=" row">
     <div class="delete_block col-xl-4 pb-2 ">
       <!-- delete  button-->
       <div class="card ">

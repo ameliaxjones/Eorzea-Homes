@@ -24,13 +24,13 @@
             <% if listing.photos.first %>
               <div class="b_image card card-cover overflow-hidden rounded-5 " style="background-image: url(<%= url_for(listing.photos.first)%>); ">
                 <div class="d-flex flex-column h-100 p-5 pb-3  ">
-                  <ul class="d-flex  mt-auto">
+                  <ul class=" text_bg d-flex  mt-auto">
                     <li class="me-auto">
                       <li class="d-flex align-items-center me-3">
                       <% else %>
                         <div class="stock_img card card-cover h-100 overflow-hidden rounded-5 " style="background-image: url('assets/profile-image.jpg');">
                           <div class="d-flex flex-column h-100 p-5 pb-3 ">
-                            <ul class="d-flex  mt-auto">
+                            <ul class="text_bg d-flex  mt-auto">
                               <li class="me-auto">
                                 <li class="d-flex align-items-center me-3 ">
                                 <% end %>

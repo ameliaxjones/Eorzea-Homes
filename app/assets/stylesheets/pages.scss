@@ -30,8 +30,25 @@
   font-weight: bolder;
 }
 
+// txt styling on  featured listing  \\
+.text_bg{
+  list-style-type: none;
+  background-color: rgba(241, 246, 241, 0.3);
+  text-decoration: none;
+}
 
+.text_bg small{
+  color: #ffffff;
+  text-shadow:
+   -1px -1px 0 rgb(0, 0, 0),  
+    1px -1px 0 rgb(0, 0, 0),
+    -1px 1px 0 rgb(0, 0, 0),
+     1px 1px 0 rgb(0, 0, 0);
+}
 
+A:link {text-decoration: none}
+A:visited {text-decoration: none}
+A:active {text-decoration: none}
 
 /*------- how to page css -------*/
 
