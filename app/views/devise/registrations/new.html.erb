@@ -20,6 +20,10 @@
         <% if @minimum_password_length %>
           <em class="min_pass">(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
+        <div class="field">
+        <%= f.label "Please tick if you are a designer", class: "small mb-1" %>
+          <%= f.check_box :seller %>
+          </div>
         <button class="w-100 btn btn-lg btn-outline-secondary" type="submit">Sign up</button>
         <div class = "text"> <%= render "devise/shared/links" %> </div>
       </form>
