@@ -19,6 +19,9 @@ yokkio = User.create(email: "yokkio@maildrop.cc",
                     password_confirmation: "123456",
                     seller: true
 )
+
+yokkio = GameAddress.create( datacenter: "aether", location: "goblet", plot: 2, ward: 3, user_id: yokkio.id)
+
 yokkio.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/yokkio_med/profile.png')), filename: 'profile.png')
 
 yokkio_listing = Listing.create(title: "Hidden Cottage", short_body: "Tranquil setting for anyone who loves nature and calm vibes", body: "This build was made especially for a small house and will, unfortunately, take away access to the basement due to glitching. It will take 2-3 full days to build. Perfect for anyone who wants a cosy cottage feeling" ,user_id: yokkio.id, price: 95, open: true, housingsize_id: small.id)
@@ -36,6 +39,9 @@ orangejuice = User.create(email: "orangejuice@maildrop.cc",
     password_confirmation: "123456",
     seller: true
 )
+
+orangejuice = GameAddress.create( datacenter: "faerie", location: "mist", plot: 4, ward: 60, user_id: orangejuice.id)
+
 orangejuice.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/orangejuice/profile.jpg')), filename: 'profile.jpg')
 
 orangejuice_listing = Listing.create(title: "Dark Blue ", short_body: "An elegant European Style Villa for a large house", body: "
@@ -55,6 +61,9 @@ lulu = User.create(email: "lulu@maildrop.cc",
     password_confirmation: "123456",
     seller: true
 )
+
+lulu = GameAddress.create( datacenter: "goblin", location: "lavender beds", plot: 20, ward: 40, user_id: lulu.id)
+
 lulu.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/lulu/profile.jpg')), filename: 'profile.jpg')
 
 lulu_listing = Listing.create(title: "Heavenly cross", short_body: "The stained glass windows are stunning when the light just hits right. ", body: "A quick build that won't take too long but is very effective.  I can dye the flowers, floor and mannequins in different colours so let me know if you do. This is probably one of my favourites builds to date with its simple yet impactful details its sure to make its mark on your home." ,user_id: lulu.id, price: 50, open: true, housingsize_id: small.id)
@@ -73,6 +82,9 @@ fenrir = User.create(email: "fenrir@maildrop.cc",
     password_confirmation: "123456",
     seller: true
 )
+
+fenrir = GameAddress.create( datacenter: "Exodus", location: "Shirogane", plot: 1, ward: 35, user_id: yokkio.id)
+
 fenrir.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/fenrir/profile.jpg')), filename: 'profile.jpg')
 
 fenrir_listing = Listing.create(title: "Bright colourful bathroom", short_body: "
@@ -95,6 +107,9 @@ faeriepeach= User.create(email: "faeriepeach@maildrop.cc",
     password_confirmation: "123456",
     seller: true
 )
+
+faeriepeach = GameAddress.create( datacenter: "Shiva", location: "Lavender Beds", plot: 2, ward: 3, user_id: faeriepeach.id)
+
 faeriepeach.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/p.jpg')), filename: 'p.jpg')
 
 faeriepeach_listing = Listing.create(title: "The Viridian Suite", short_body: "A luxe, romantic hotel room perfect for a proposal or a  date", body: "This was a fun room to build especially with the indoor hot tub! The marble flooring around it really ties it all together. If you want to change the colours of the walls and cushions let me know beforehand, please!" ,user_id: faeriepeach.id, price: 120, open: true, housingsize_id: medium.id)
@@ -118,14 +133,15 @@ faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/imag
 faeriepeach_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/faeriepeach/4.jpg')), filename: '4.jpg')
 
 
-
-
-
 alauradanon= User.create(email: "alauradanon@maildrop.cc",
     password: "123456",
     password_confirmation: "123456",
     seller: true
 )
+
+alauradanon = GameAddress.create( datacenter: "Anima", location: "goblet", plot: 22, ward: 54, user_id: alauradanon.id)
+
+
 alauradanon.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/alauradanon/profile1.jpg')), filename: 'profile1.jpg')
 
 alauradanon_listing = Listing.create(title: "Stormy night dungeon cell ", short_body: "Perfect for locking up people who complain about parts of your house being blocked off ", body: "A fun build  inspired by dark souls \o/ a small dungeon cell with a perfect stormy background.  Its quite a cosy feeling, only the best for my prisoners haha.  This was done in an apartment but can also be transferred into an FC room!" ,user_id: alauradanon.id, price: 95, open: true, housingsize_id: appartment.id)
@@ -151,12 +167,15 @@ alauradanon_listing.photos.attach(io: File.open(Rails.root.join('app/assets/imag
 
 
 
-
 camillus= User.create(email: "camillus@maildrop.cc",
     password: "123456",
     password_confirmation: "123456",
     seller: true
 )
+
+camillus = GameAddress.create( datacenter: "tonberry", location: "mist", plot: 1, ward: 40, user_id: camillus.id)
+
+
 camillus.avatar.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/profile2.jpg')), filename: 'profile1.jpg')
 
 camillus_listing = Listing.create(title: "Modern bar", short_body: "Fresh clean mordern bar build", body: "This super modern build is in the basement of a house, It can be any size house since this is the basement.  The cost of the build is a set price no matter the size of the house itself as all basements are the same size. Colours can be changed but i think it works best with whites, creams and marbles. 
