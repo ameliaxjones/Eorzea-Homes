@@ -6,7 +6,7 @@
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+import "Turbolinks from "turbolinks"
 
 
 require("trix")

@@ -1,10 +1,10 @@
 <div class="container-xl px-4 mt-4">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="row">
-      <div class="col-xl-4">
+    <div class="row pb-2">
+      <div class="col-xl-4 ">
         <!-- Profile picture card-->
-        <div class="card mb-4 mb-xl-0">
+        <div class="card mb-4 mb-xl-0 pb-3">
           <div class="card-header">Profile Picture</div>
           <div class="card-body text-center">
             <% if current_user.avatar.present? %>
@@ -16,6 +16,13 @@
             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
             <!-- Profile picture upload button-->
             <%= f.file_field :avatar, class: "form-control" %>
+          </div>
+        </div>
+        <!-- Adress-->
+        <div class="card  mb-xl-0 mt-2">
+          <div class="card-header">Add Address</div>
+          <div class="card-body text-center">
+            <%= link_to "Manage addresses", game_addresses_path, class: "btn btn-sm btn-outline-secondary" %>
           </div>
         </div>
       </div>
@@ -49,7 +56,7 @@
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
             </div>
             <!-- Form Row-->
-            <%= f.submit "Update", class: "btn btn-primary" %>
+            <%= f.submit "Update", class: "btn btn-sm btn-outline-secondary" %>
           </div>
         </div>
       </div>
@@ -59,20 +66,12 @@
     <% end %>
     <!-- Form ends  DO NOT PUT DELETE BUTTON INSIDE THIS FORM IT WILL DELETE USERS WHEN TRYING TO SAVE -->
   <% end %>
-  <div class="col-xl-4 float-end  ">
+  <div class="col-xl-4 pb-2 mb-2">
     <!-- delete  button-->
-    <div class="card mb-2 mb-xl-0">
+    <div class="card ">
       <div class="card-header">Unhappy?</div>
       <div class="card-body text-center">
-        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-outline-danger" %></p>
     </div>
   </div>
 </div>
-<div class="col-xl-4">
-  <!-- Adress-->
-  <div class="card mb-2 mb-xl-0">
-    <div class="card-header">Add Address</div>
-    <div class="card-body text-center">
-      <%= link_to "Manage addresses", game_addresses_path, class: "btn btn-primary" %>
-    </div>
-  </div>
