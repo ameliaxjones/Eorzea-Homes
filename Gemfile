@@ -70,3 +70,4 @@ gem 'stripe'
 gem 'activestorage-validator'
 
 gem 'aws-sdk-s3'
+
