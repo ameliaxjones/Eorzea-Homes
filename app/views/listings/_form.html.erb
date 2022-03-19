@@ -39,8 +39,8 @@
         </div>
         <%# #drop down menu for address %>
         <%= form.label :housingsize %>
-        <div class="field form-control form-group form-select pb-1">
-          <%= form.select :housingsize_id,  options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id)%>
+        <div class="field p-1">
+          <%= form.select :housingsize_id,  options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id), {}, {:class => "form-select form-select-sm mb-3  show-tick"}%>
         </div>
         <p class=" open-text pt-1"> Please select a housing size </p>
         <div class="actions pt-4 ">

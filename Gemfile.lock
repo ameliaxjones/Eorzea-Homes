@@ -116,8 +116,6 @@ GEM
     file_validators (3.0.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
-    font-awesome-rails (4.7.0.8)
-      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -269,7 +267,6 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   file_validators
-  font-awesome-rails
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)
