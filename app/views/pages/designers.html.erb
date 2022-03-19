@@ -1,28 +1,35 @@
 <div class="card bg-light ">
-  <div class="pt-4"><h1> Designers </h1></div>
+  <div class="pt-4">
+    <h1> Designers </h1>
+  </div>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gutters-sm p-4">
     <% @designers.each do |designer| %>
       <div class="col mb-3">
         <div class="card">
-          
           <div class="card-body text-center">
-          <%if designer.avatar.attached?%>
-          <%= image_tag designer.avatar, class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "120px", height: "32"%>
-          <%else%>
-            <%= image_tag "profile-image.jpg", class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "120px", height: "32px", margintop: "65px"%>
-          <%end%>
-            
+            <%if designer.avatar.attached?%>
+              <%= image_tag designer.avatar, class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "120px", height: "32"%>
+            <%else%>
+              <%= image_tag "profile-image.jpg", class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "120px", height: "32px", margintop: "65px"%>
+            <%end%>
             <h5 class="card-title"><%= designer.username.capitalize%></h5>
             <% if !designer.game_addresses.empty? %>
-            <p class="text-muted font-size-sm"> <%= designer.game_addresses.first.datacenter.capitalize %> </p>
+              <p class="text-muted font-size-sm"> <%= designer.game_addresses.first.datacenter.capitalize %> </p>
             <% end %>
           </div>
           <div class="card-footer  ">
-            <button class=" btn btn-sm btn-outline-secondary " type="button"><i class="material-icons">Reviews</i>
-            </div>
+            <%# # Show if they have reviews   %>
+            <% if !designer.reviewee_reviews.empty?%>
+            <%= link_to "Reviews", reviews_path({:reviewee_id => designer.id}), :class => "btn btn-sm btn-outline-secondary" %>
+            <% end %>
+            <%# #cant review yourself  %>
+            <% if current_user.id != designer.id%>
+              <%= link_to "Write review", new_review_path({:reviewee_id => designer.id}), :class => "btn btn-sm btn-outline-secondary" %>
+            <% end %>
           </div>
         </div>
-      <%end%>
-    </div>
+      </div>
+    <%end%>
   </div>
+</div>
 </div>

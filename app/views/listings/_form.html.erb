@@ -1,53 +1,52 @@
-
-  <div class="form container">
-    <%= form_with(model: listing) do |form| %>
-      <% if listing.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
-          <ul>
-            <% listing.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="card-body">
-        <div class="field pb-1">
-          <%= form.label :title, class: "small mb-1"%>
-          <%= form.text_field :title, class: "form-control" %>
-        </div>
-        <div class="field pb-1">
-          <%= form.label :price, class: "small mb-1"%>
-          <%= form.text_field :price, class: "form-control" %>
-        </div>
-        <div class="field pb-1 pt-2">
-          <%= form.label :open, class: "small mb-1" %>
-          <%= form.check_box :open %>
-          <p class=" open-text"> If listing is open please check box </p>
-        </div>
-        <div class="field pb-1 pt-2">
-          <%= form.label :short_body, class: "small mb-1" %>
-          <%= form.text_field :short_body, class: "form-control" %>
-        </div>
-        <div class="field pb-1 pt-2">
-          <%= form.label :body, class: "small mb-1" %>
-          <%= form.text_area :body, class: "form-control"%>
-        </div>
-        <div class="photos pb-4 pt-2">
-          <%= form.label :photos %>
-          <%= form.file_field :photos, :multiple => true %>
-        </div>
-        <%# #drop down menu for address %>
-        <%= form.label :housingsize %>
-        <div class="field p-1">
-          <%= form.select :housingsize_id,  options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id), {}, {:class => "form-select form-select-sm mb-3  show-tick"}%>
-        </div>
-        <p class=" open-text pt-1"> Please select a housing size </p>
-        <div class="actions pt-4 ">
-          <%= form.submit class: "form-control"%>
-        </div>
+<div class="form container">
+  <%= form_with(model: listing) do |form| %>
+    <% if listing.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+        <ul>
+          <% listing.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="card-body">
+      <div class="field pb-1">
+        <%= form.label :title, class: "small mb-1"%>
+        <%= form.text_field :title, class: "form-control" %>
+      </div>
+      <div class="field pb-1">
+        <%= form.label :price, class: "small mb-1"%>
+        <%= form.text_field :price, class: "form-control" %>
+      </div>
+      <div class="field pb-1 pt-2">
+        <%= form.label :open, class: "small mb-1" %>
+        <%= form.check_box :open %>
+        <p class=" open-text"> If listing is open please check box </p>
+      </div>
+      <div class="field pb-1 pt-2">
+        <%= form.label :short_body, class: "small mb-1" %>
+        <%= form.text_field :short_body, class: "form-control" %>
+      </div>
+      <div class="field pb-1 pt-2">
+        <%= form.label :body, class: "small mb-1" %>
+        <%= form.text_area :body, class: "form-control"%>
+      </div>
+      <div class="photos pb-4 pt-2">
+        <%= form.label :photos %>
+        <%= form.file_field :photos, :multiple => true %>
+      </div>
+      <%# #drop down menu for address %>
+      <%= form.label :housingsize %>
+      <div class="field p-1">
+        <%= form.select :housingsize_id,  options_from_collection_for_select(Housingsize.order(:value).all, "id", "value", current_user.id), {}, {:class => "form-select form-select-sm mb-3  show-tick"}%>
+      </div>
+      <p class=" open-text pt-1"> Please select a housing size </p>
+      <div class="actions pt-4 ">
+        <%= form.submit class: "form-control"%>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
 </div>

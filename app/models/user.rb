@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :game_addresses
   has_many :orders
 
+  ## Reviews- has mulitpul many relationships to reviews as a user can either. class_name : 'review is hardwrigin the code straight to the rewiew controller. 
+  has_many :reviewee_reviews, class_name: 'Review', foreign_key: 'reviewee_id'
+  has_many :reviewer_reviews, class_name: 'Review', foreign_key: 'reviewer_id'
+
   ## Attaches avatar image to user
   has_one_attached :avatar
 

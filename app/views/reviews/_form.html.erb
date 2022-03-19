@@ -1,0 +1,37 @@
+<div class="bg-light">
+  <div class="form container">
+    <%= form_with(model: review) do |form| %>
+      <% if review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+          <ul>
+            <% review.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="card-body">
+        <div class="field pb-1">
+          <%= form.label :title, class: "small mb-1" %>
+          <%= form.text_field :title , class: "form-control"%>
+        </div>
+        <div class="field pb-1">
+          <%= form.label :description, class: "small mb-1" %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
+        <div class="field pb-1">
+          <%= form.label :score, class: "small mb-1" %>
+          <%= form.number_field :score, class: "form-control" %>
+          <p class=" open-text pt-1 pb-2"> Please select a number from 1-5</p>
+        </div>
+        <%# hides the below feilds  %>
+        <%= form.hidden_field :reviewer_id %>
+        <%= form.hidden_field :reviewee_id %>
+        <div class="actions">
+          <%= form.submit class: "form-control"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
