@@ -188,3 +188,21 @@ camillus_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/
 camillus_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/3.jpg')), filename: '3.jpg')
 
 camillus_listing.photos.attach(io: File.open(Rails.root.join('app/assets/images/profiles/camillus/4.jpg')), filename: '4.jpg')
+
+
+
+# Reviews 
+
+
+r1 = Review.create( title: "Great", description: "The new bar looks amazing! I really like the new colour scheme we chose instead of white!", score: 5, reviewer_id: yokkio.id, reviewee_id: camillus.id)
+
+r2 = Review.create( title: "Good", description: "Fantastic to work with", score: 4, reviewer_id: fenrir.id, reviewee_id: yokkio.id)
+
+r3 = Review.create( title: "Fun new bar", description: "Love it! Get so many comments when people come to visit ", score: 5, reviewer_id: yokkio.id, reviewee_id: camillus.id)
+
+r4 = Review.create( title: "Spooky", description: "5/5 Dungeon asthetic cant be happier to have a place to lock people up now :D", score: 5, reviewer_id: orangejuice.id, reviewee_id: alauradanon.id)
+
+r5 = Review.create( title: " Mayday! Mayhey~", description: "
+    great to work with, wish it was a little bigger though", score: 3, reviewer_id: lulu.id, reviewee_id: alauradanon.id)
+
+r6 = Review.create( title: "beautiful", description: "What lulu managed to creat was amazing for such a small room and in a short amount of time too!", score: 5, reviewer_id: faeriepeach.id, reviewee_id: lulu.id)

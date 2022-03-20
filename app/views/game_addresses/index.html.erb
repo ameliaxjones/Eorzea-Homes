@@ -24,11 +24,11 @@
                 <tbody>
                   <% @game_addresses.each do |game_address| %>
                       <tr>
-                        <td><%= game_address.datacenter %></td>
-                        <td><%= game_address.location %></td>
-                        <td><%= game_address.plot %></td>
-                        <td><%= game_address.ward %></td>
-                        <td><%= game_address.roomnumber %></td>
+                        <td><%= sanitize game_address.datacenter.html_safe%></td>
+                        <td><%= sanitize game_address.location.html_safe %></td>
+                        <td><%=  game_address.plot %></td>
+                        <td><%=  game_address.ward %></td>
+                        <td><%=  game_address.roomnumber %></td>
                       
                         <td><%= link_to 'Edit', edit_game_address_path(game_address), class: "btn btn-sm btn-outline-secondary" %></td>
                         <td><%= link_to 'Destroy', game_address, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-danger"%></td>

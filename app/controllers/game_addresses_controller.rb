@@ -27,7 +27,7 @@ class GameAddressesController < ApplicationController
 
     respond_to do |format|
       if @game_address.save
-        format.html { redirect_to game_address_url(@game_address), notice: "Game address was successfully created." }
+        format.html { redirect_to game_addresses_url(), notice: "Game address was successfully created." }
         format.json { render :show, status: :created, location: @game_address }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class GameAddressesController < ApplicationController
   def update
     respond_to do |format|
       if @game_address.update(game_address_params)
-        format.html { redirect_to game_address_url(@game_address), notice: "Game address was successfully updated." }
+        format.html { redirect_to game_addresses_url(), notice: "Game address was successfully updated." }
         format.json { render :show, status: :ok, location: @game_address }
       else
         format.html { render :edit, status: :unprocessable_entity }

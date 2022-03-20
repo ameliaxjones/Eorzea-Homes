@@ -10,12 +10,12 @@
           <div class="card p-3 mb-5">
             <div class="d-flex justify-content-between align-items-center">
               <div class="user d-flex flex-row align-items-center">
-                <%if review.reviewee.avatar.attached?%>
-                  <%= image_tag review.reviewee.avatar, class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "70px", height: "32"%>
+                <%if review.reviewer.avatar.attached?%>
+                  <%= image_tag review.reviewer.avatar, class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "70px", height: "32"%>
                 <%else%>
                   <%= image_tag "profile-image.jpg", class: "img-fluid img-thumbnail rounded-circle border-0 mb-3 ", width: "70px", height: "32px", margintop: "65px"%>
                 <%end%>
-                <span><small class="font-weight-bold text-dark"><%= current_user.username.capitalize %>:</small> <small class="font-weight-bold text-secondary"><%= review.title.capitalize %> -   <%= review.description %></small></span> </div>
+                <span><small class="font-weight-bold text-dark"><%= review.reviewer.username.capitalize %>:</small> <small class="font-weight-bold text-secondary"><%= sanitize review.title.capitalize.html_safe %> -   <%= sanitize review.description.html_safe %></small></span> </div>
               <small>Score: <%= review.score %></small>
             </div>
             <div class="action d-flex justify-content-between mt-2 align-items-center">
@@ -32,3 +32,6 @@
     </div>
   </div>
 </div>
+
+
+<%# sanitize stops cross site scriptign in reviews  %>

@@ -13,8 +13,8 @@
               <%= image_tag "profile-image.jpg", alt: "website logo", class: "bd-placeholder-img card-img-top", width: "100%", height: "225"%>
             <%end%>
             <div class="card-body">
-              <h4 class="card-title"><%= listing.title%></h4>
-              <p class="card-text"><%= listing.short_body%></p>
+              <h4 class="card-title"><%= sanitize listing.title.html_safe%></h4>
+              <p class="card-text"><%= sanitize listing.short_body.html_safe%></p>
               <p class="card-user"><%= listing.user.email%></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
