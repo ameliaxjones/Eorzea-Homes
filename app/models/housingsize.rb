@@ -1,5 +1,5 @@
 class Housingsize < ApplicationRecord
     has_many :listings
 
-    validates :value, presence: true 
+    validates :value, length: {minimum: 3, maximum: 20}
 end

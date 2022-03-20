@@ -1,7 +1,7 @@
 class GameAddress < ApplicationRecord
     belongs_to :user
-    validates :datacenter, presence: true
-    validates :location, presence: true
+    validates :datacenter, length: {minimum: 3, maximum: 20}
+    validates :location, length: {minimum: 3, maximum: 20}
     validates :plot, presence: true
     validates :ward, presence: true
 
