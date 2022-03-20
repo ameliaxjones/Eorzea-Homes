@@ -3,25 +3,25 @@
 
 ### The problem
 
-Final Fantesy 14 offers houses for their players.
-They have four diffrent sizes players can choose from:
-Appartment, Small,
-Medium and Large.  With housing comes decordation and design
+Final Fantasy 14 offers houses for their players.
+They have four different sizes players can choose from:
+Apartment, Small, Medium and Large.  
+
+With housing comes decoration and design
 and this is where the first problem lies. It is surprisingly
 not an easy task to do, As a player you have to glitch 
-furniture and items to create 
-your ideal aesthetic which can be time consuming and 
+furniture and items to create your ideal aesthetic which can be time consuming and 
 tedious.  Another problem is that housing is considered 
 'end game' content so most players who do give out their 
 services for interior design, do it for in game money (gil) 
-which they have abundence off and have nothing to spend it on. 
+which they have abundance of and have nothing to spend it on. 
 
 
 ### Why it needs solving 
 
 This is where Eorzea Homes comes in. It is a marketplace for
-interier designers to showcase what they can achive with  
-glitches and some flair. They then can offter their services
+interior designers to showcase what they can archive with  
+glitches and some flair. They then can offer their services
 for actual money instead of gil (in game money)
 
 ## Deployed site
@@ -36,15 +36,14 @@ My [Github Repo](https://github.com/ameliaxjones/T2A2)
 
 The purpose of Eorzea Homes is to easily connect FF players
 who want to decorate their homes with designers who offer their
-services. However this markertplace allows for anyone who plays 
+services. However this marketplace allows for anyone who plays 
 FF to be a designer.
 
 
 ### Features
 - User sign-up to allow posting and purchasing 
 - User profile to keep track of in game addresses
- (as FF playes can
-have mulitpul houses on diffrent servers)
+ (as FF players can have multiple houses on different servers)
 - Image upload for profile image and for designers to show off what they
 can build
 
@@ -87,18 +86,27 @@ For any FF14 player who wants to  buy an aesthetic looking build or wants to bui
 ## Stories 
 
 ### Seller stories 
-- As a seller i would like to post what jobs i can do
-- As a seller I would like to set my own pricing
-- As a seller i would like to control how many jobs i can take at one time
-- As a seller i would like to be able to upload images to my portfolio
-- As a seller i would like to log in
-
+- As a seller i would like to post what jobs i can offer as a listing
+- As a seller I would like to set my own pricing on my listings
+- As a seller i would like to control how many jobs i can offer at one time
+- As a seller i would like to be able to upload images to my listings
 
 ### Buyer stories 
 - As a buyer I would like to browse different listings
 - As a buyer I would like to view the listing in more detail
-- As a buyer I would like to view the seller's profile 
-- As a buyer I would like to purchase services
+- As a buyer I would like to purchase the listing as an Order
+- As a buyer i would like to view my orders
+- As a buyer I would like to view the Designer's reviews
+- As a buyer i would like to be able to review Designers
+- As a buyer I would like to be able to edit and delete my reviews
+
+### User Stories (Global)
+- As a User I would like to be able to sign up to the platform using my email address
+- As a User I would like to be able to reset my password
+- As a User I would like to be able to sign up as a seller (Designer)
+- As a User I would like to log into the platform before interacting
+- As a User I would like to set my avatar picture
+- As a User I would like to manage my game addresses (Add, Edit, Delete)
 
 
 ## Wireframes
@@ -119,6 +127,10 @@ For any FF14 player who wants to  buy an aesthetic looking build or wants to bui
 ## ERD
 
 ![image](docs/erd.png)
+![image](docs/database_design.png)
+![image](docs/ERD_no_FK_min_attributes.png)
+
+It was unclear and mixed messages were given out about the requirement for ERD, I have provided a few versions to try and cater for this.
 
 
 ## Abstractions
@@ -141,7 +153,7 @@ helps show the user specific information, made pretty with
 SCSS. 
 
 The Models: user.rb, order.rb, listing.rb, h_cat.rb and
- game_address.rb all inherite from ApplicationRecord which 
+ game_address.rb all inherited from ApplicationRecord which 
  then inherits from ActiveRecord. Using Inheritance allows 
  characteristics of one class to inherit from another and 
  vice versa. Doing this is allows the reuse of methods that
@@ -156,8 +168,14 @@ The Models: user.rb, order.rb, listing.rb, h_cat.rb and
 ## Models & ActiveRecord Relationships
 
 Users:
-- Have many Listings 
-- Have many Orders
+- Has Many Listings 
+- Has Many Orders
+- Has Many reviews as a reviewer
+- Has Many reviews as a reviewee
+- Has Many game address
+
+Game Address:
+- Belongs to User
 
 Listings:
 - Have one Seller 
@@ -168,6 +186,14 @@ Listings:
 Orders:
 - Have one Game_Address
 - Have one Listing 
+
+Reviews:
+- Belongs to user as reviewer
+- Belongs to user as reviewee
+
+Housingsize:
+- Has Many listings
+
 
 ## Database Relations
 
@@ -191,11 +217,10 @@ and the gem acivestorage-validator when shown to the user it
 
 ## Database Schema Design
 
-![image](docs/s1.png)
-![image](docs/s2.png)
-![image](docs/s3.png)
+![image](docs/database_design.png)
+![image](docs/ERD_no_FK_min_attributes.png)
 
-As you can see from the provided scheme.rb and  ERD diagram 
+As you can see from the provided schema.rb in the db/schema.rb and ERD diagram 
 (see further up)  there isn't too much difference between them.
  For the Users table, I didn't need to add certain columns as 
  shown in the scheme due to the gem Device taking care of them
