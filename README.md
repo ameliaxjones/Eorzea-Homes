@@ -212,4 +212,11 @@ Tasks for the development of Eorzea Homes are tracked using a Trello board [foun
 - Sprinkles list tasks are tasks i would like to implement if i have time
 - Requirements list tasks make sure i meet the requirements of the assignment
  
+## Image Credit
+- Twitter @lululupopo
+- Twitter: @Orangejuice_233
+- Twitter: @VU1017
+- Twitter: @kito_w_f
+- Twitter: @CamillusEW
+
 
